@@ -1,4 +1,4 @@
-Euler-pyton
+Euler-python
 ===========
 
 Euler-python
