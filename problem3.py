@@ -25,8 +25,4 @@ def largest_prime_factor(num):
         elif num % p == 0:
             a = p
 
-print largest_prime_factor(600851475143) "maybe run long time, if you have a good idea, please tell me"
-
-        
-        
-        
+print largest_prime_factor(600851475143) # maybe run long time, if you have a good idea, please tell me
