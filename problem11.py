@@ -20,14 +20,20 @@
 # What is the value of the first triangle number to have over five hundred divisors?
 
 import itertools
+import math
 
 def first_triangle_number(divisors):
     def number_of_divisors(triangle):
         count = 0
-        for i in xrange(1, triangle+1):
+        sentinel = math.sqrt(triangle)
+        
+        for i in xrange(1, int(sentinel+1)):
             if triangle % i == 0:
                 count += 1
-        return count
+        if int(sentinel)**2 == triangle:
+            return count * 2 - 1
+        else:
+            return count * 2
     for i in itertools.count(2, 1):
         triangle = reduce(lambda x, y: x+y, xrange(0, i))
         if divisors > number_of_divisors(triangle):
@@ -38,7 +44,11 @@ def first_triangle_number(divisors):
             return None
         
 
-print first_triangle_number(500)
+for i in itertools.count(500):
+    triangle = first_triangle_number(i)
+    if triangle is not None:
+        print triangle
+        break
                           
                           
                                
