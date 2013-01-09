@@ -19,6 +19,6 @@ def prime():
                 break
 
 def Summation_of_primes(sum):
-    return reduce(int.__add__, itertools.takewhile(lambda x: x < sum, prime()))
+    return reduce(lambda x, y: x + y, itertools.takewhile(lambda x: x < sum, prime()))
 
 print Summation_of_primes(2*10**6)
